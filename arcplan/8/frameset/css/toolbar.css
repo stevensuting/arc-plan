@@ -1,0 +1,100 @@
+﻿/*Toolbar*/
+
+.toolbar .icon {
+	list-style: none;
+	float: left;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+
+.toolbar h2 
+{
+	margin:0px 2px;
+	padding:2px 0px;
+}
+
+.toolbar .small
+{
+	margin:0px 5px;
+}
+
+/*Popup window styles*/
+.toolbar ul ul
+{ /*important to position the popup window approriately*/
+	padding:0px;
+	margin:0px;
+}
+
+.toolbar iframe {
+	position: absolute;
+	width: 190px;
+	z-index:100;
+	padding:3px 1px;
+	border:none;
+}
+
+.toolbar ul ul a {
+	display: block;
+	font: 12px/17px arial, helvetica, sans-serif;
+	color: #2F4871;
+	width: 177px;
+	padding:0 8px;
+	text-align:left;
+}
+
+.drillentry {
+	background-image:url('../img/menu/drilldown.gif');
+	background-position:right;
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+}
+
+.toolbar ul ul {
+	position: absolute;
+	z-index: 105;
+	/*width:170px;*/
+}
+ 
+.toolbar li li {
+	height:19px;
+	white-space: nowrap;
+	position: relative;
+	z-index: 110;
+	background-color:#F0F6FD;
+	list-style: none
+}
+
+.toolbar ul ul li:hover {
+	background-color:#D3E3F7;
+}
+
+.toolbar ul ul a:hover {
+	background-image:url('../img/menu/itemselect.png');
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+}
+ 
+/*place 2nd submenu right to the upper right corner of the parent li*/
+.toolbar ul ul ul {
+	position: absolute;
+	top: 0;
+	left: 100%;
+}
+
+/*hide unhovered submenues*/
+.toolbar ul ul,
+.toolbar ul li:hover ul ul,
+.toolbar ul ul li:hover ul ul
+{
+	display: none;
+}
+ 
+/*display hovered submenus*/
+.toolbar ul li:hover ul,
+.toolbar ul ul li:hover ul,
+.toolbar ul ul ul li:hover ul
+{
+	display: block;
+}
+  

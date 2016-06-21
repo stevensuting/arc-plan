@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>arcplan Solution (Tabcontrol)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script type="text/javascript" src="js/tabpane.js"></script>
+	<link id="luna-tab-style-sheet" type="text/css" rel="stylesheet" href="css/luna/tab.css"> 
+</head>
+<body style="margin:0px;background-color=#FFFFFF">
+	<div class="tab-pane" id="tabPane" style="height:17px;overflow:hidden;"> 
+	<script type="text/javascript">
+		//Create an instance of WebFXTabPane for later usage of the api functions
+		//false means, no cookie to remember the tab setting
+		var tabPane1 = new WebFXTabPane(document.getElementById("tabPane"), false);
+		for (i = 0; i < top.m_tabListText.length; i++) {
+			document.writeln("<div class='tab-page'><h2 class='tab'><a style='width:70px' href='javascript:top.openTab("+i+")'>" + top.m_tabListText[i] + "</a></h2></div>")
+		}
+	</script>
+ 	</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Spotlight</title>
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="apple-mobile-web-app-title" content="StartSpotlight">
+	<meta name="application-name" content="StartSpotlight" />
+	<link rel="shortcut icon" href="/arcplan/8/client/img/favicon.ico" sizes="256x256" />
+	<link href="/arcplan/8/client/img/favicon57.png" rel="apple-touch-icon-precomposed">
+	<link href="/arcplan/8/client/img/favicon72.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+	<link href="/arcplan/8/client/img/favicon114.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+	<link href="/arcplan/8/client/img/favicon144.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+	<meta name="msapplication-TileImage" content="/arcplan/8/clientfavicon144.png"/>
+	<meta name="msapplication-TileColor" content="#c5eeff"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<style>
+	@-ms-viewport{
+		width: device-width;
+	}
+	</style>
+	<link type="text/css" rel="stylesheet" href="/arcplan/8/client/css/arcclient.css"/>
+</head>
+<body id="arcBody" style="background-color:Silver">
+
+	<div id="arcContainer" class="arcContainer"></div>
+	<script type="text/javascript">
+		var script = "/arcplan/8/client/js/version_cb.js?b=" + (new Date()).getTime();
+		document.writeln("<script type='text/javascript' src='" + script + "'><\/script>");
+	</script>
+	<script src="/arcplan/8/client/js/require.js" type="text/javascript"></script>
+	<script src="/arcplan/8/client/js/iscroll.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		var ARCPLAN = ARCPLAN || {},
+			version_argument = version_argument || "",
+			userParameters = {},
+			baseUrl = "/arcplan/8/client/js";
+
+		ARCPLAN.language = "server";
+		ARCPLAN.application = "SpotlightHTML5";
+		ARCPLAN.startDocName = "application.apa";
+		ARCPLAN.arcCgiSite = "http://localhost.arcplan.com/arcplan/8/scripts/arcCGI8.exe";
+		
+		ARCPLAN.setUserParams = function(userparamCallback) {
+			for (var property in userParameters) {
+				userparamCallback.setParam(property, userParameters[property]);
+			}	
+		};
+
+		function parseQueryString (queryString) {
+			var paramArray, temp, i,
+				params = {};
+ 
+			if (queryString.indexOf("?") === 0) {
+				queryString = queryString.substr(1);
+			}
+			paramArray = queryString.split("&");
+			for ( i = 0; i < paramArray.length; i += 1) {
+				temp = paramArray[i].split('=');
+				params[temp[0]] = temp[1];
+			}
+			return params;
+		}
+
+		function setStartParametersFromUrl() {
+			var property, paramId,
+				userparamString = "userparam",
+				params = parseQueryString(window.location.search);
+			
+			for (property in params) {
+				if (property === "application" && params[property] !== "") {
+					ARCPLAN.application = params[property];
+				}
+				else if (property === "startDocName" && params[property] !== "") {
+					ARCPLAN.startDocName = params[property];
+				}
+				else if (property === "cgiUrl" && params[property] !== "") {
+					ARCPLAN.arcCgiSite = decodeURIComponent(params[property]);
+				}
+				else if (property === "baseurl" && params[property] !== "") {
+					baseUrl = decodeURIComponent(params[property]);
+				}
+				else if (property.indexOf(userparamString) === 0 && params[property] !== "") {
+					paramId = property.substring(userparamString.length);
+					userParameters[paramId] = params[property];
+				}
+			}
+		}
+
+		setStartParametersFromUrl();
+
+		require({
+			baseUrl: baseUrl,
+			priority: ['jquery'],
+			urlArgs: version_argument
+		}, ['arcclient'],
+		function (arcclient) {
+			ARCPLAN.arcclient = arcclient;
+		});
+
+	</script>
+</body>
+</html>

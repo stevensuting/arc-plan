@@ -1,0 +1,772 @@
+@keyframes WaitFadeIn {
+	0% {
+		opacity:0.1;
+	}
+	75% {
+		opacity:0.5;
+	}
+	100% {
+		opacity:1;
+	}
+}
+	
+@-moz-keyframes WaitFadeIn {
+	0% {
+		opacity:0.1;
+	}
+	75% {
+		opacity:0.5;
+	}
+	100% {
+		opacity:1;
+	}
+}
+@-webkit-keyframes WaitFadeIn {
+	0% {
+		opacity:0.1;
+	}
+	75% {
+		opacity:0.5;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+div.arcDialogTitle 
+{
+	position: absolute;
+	z-index: 100000;
+	background-color: #F0F0F0;
+	color: black;
+	border: 2px outset darkgray; 
+	font-family: arial;
+	font-size: 12pt;
+}
+
+.arcDialogTitle input[type=text]
+{
+	width: 100%;
+	height:100%;
+	border: 1px solid darkgray;
+	background-color: #FFFFFF;
+}
+
+.arcDialogTitle input[type=password]
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid darkgray; 
+	background-color: #FFFFFF;
+}
+
+div.arcDialogClose 
+{
+	background-color:#C94D39;
+	color:white;
+	border-top: none;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	position:absolute;
+	right:10px;
+	top:0px;
+	width:38px;
+	cursor:pointer;
+	font-size: 8pt;
+	text-align:center;
+	font-weight: bold;
+}
+
+img.arcWaiting {
+	position:absolute;
+	visibility:hidden;
+	z-index: 100000;
+	animation: WaitFadeIn 1s 1;
+	-moz-animation: WaitFadeIn 1s 1;
+	-webkit-animation: WaitFadeIn 1s 1;
+}
+
+div.arcWaiting {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	visibility:hidden;
+	z-index: 100001;
+	background-color:transparent;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout: none;
+    user-select:none;
+    resize: none;
+}
+DIV.dynaDialog {
+	FONT-SIZE:11pt}
+DIV.dynaScrollPos {
+	overflow:hidden;
+	visibility:hidden;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:0px;
+	height:0px}
+
+IMG {
+	margin:0px;
+	padding:0px
+}
+TR {
+	margin:0px;
+	padding:0px
+}
+TD {
+	margin:0px;
+	padding:0px
+}
+INPUT[type="checkbox"] {
+	margin:0px;
+	padding:0px;
+	vertical-align:middle;
+	border:none;
+	overflow:hidden;
+}
+INPUT[type="text"] {
+	overflow:visible;
+	margin:0px;
+	padding:0px;
+	vertical-align:middle;
+	color:black;
+	border:none;
+	text-align:left}
+INPUT.dynaPass 
+{
+	padding:0pt;
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow:visible;
+	border:none;
+	vertical-align:middle;
+	font-family:inherit;
+	font-size:inherit;
+	background-color:transparent;
+	FONT-SIZE:inherit;
+	visibility:hidden}
+
+div.dynaRow {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaColumn {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaTable {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaCell {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaCheckbox {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaRadio {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaButton {
+	background-color: transparent;
+	overflow:hidden}
+div.dynaSwitch {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaMenu {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaText {
+	position:relative;
+	background-color:transparent;
+	overflow:hidden}
+div.dynaImage {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaChart {
+   background-color:transparent;
+   overflow:hidden}
+div.dynaVertHier {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaHoriHier {
+	background-color:transparent;
+	overflow:hidden}
+div.dynaHierMenu {
+	background-color:transparent;
+	overflow:hidden}
+
+.unselectable {
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout: none;
+    user-select:none;
+    resize: none}	
+IMG.dynaChart {
+	border-style:none;}
+
+table.dynaRadio tr 
+{
+}
+table.dynaRadio tr td {
+	line-height: 1em;
+	padding-bottom: 2px;
+}
+
+table.dynaRadio tr td input 
+{
+	display: inline;
+}
+
+table.dynaRadio tr td label 
+{
+	display: inline;
+}
+
+tr.dynaHoriRadio td label 
+{
+	white-space: nowrap;
+}
+
+
+TABLE.dynaVHo {
+	MARGIN:0px;
+	TEXT-INDENT:1px;
+	HORIZONTAL-ALIGN:left}
+
+TABLE.dynaVHo TBODY {
+	color:inherit;
+	FONT-FAMILY:inherit;
+	FONT-WEIGHT:inherit;
+	FONT-SIZE:inherit;
+	FONT-VARIANT:inherit;
+	FONT-STYLE:inherit}
+
+TABLE.dynaVHo TR {
+	color:inherit;
+	FONT-FAMILY:inherit;
+	FONT-WEIGHT:inherit;
+	FONT-SIZE:inherit;
+	FONT-STYLE:inherit;
+	FONT-VARIANT:inherit}
+	
+TABLE.dynaVHo TD {
+	color:inherit;
+	FONT-FAMILY:inherit;
+	FONT-SIZE:inherit;
+	FONT-STYLE: inherit;
+	FONT-VARIANT: inherit;
+	VERTICAL-ALIGN:top;
+	FONT-WEIGHT:inherit;
+	WORD-BREAK:break-all}
+ 
+TABLE.dynaVHo IMG {
+	BORDER-RIGHT:0px;
+	BORDER-TOP:0px;
+	MARGIN:0px 5px 0px 0px;
+	BORDER-LEFT:0px;
+	BORDER-BOTTOM:0px;
+	VERTICAL-ALIGN:middle;
+	cursor:pointer}
+    
+TABLE.dynaVHo div.pmc {
+	position:absolute;
+	left:12px;
+	top:0px;
+	height:20px;
+	width:100%;
+	color:#000000;
+	BACKGROUND-COLOR:transparent;
+	word-wrap: normal;
+	cursor:pointer}
+
+TABLE.dynaVHo div.pmcb {
+	position:absolute;
+	left:17px;
+	top:0px;
+	height:20px;
+	width:100%;
+	padding-top:2px;
+	color:#000000;
+	BACKGROUND-COLOR:transparent;
+	word-wrap: normal;
+	cursor:pointer}
+
+TABLE.dynaVHo div.pm {
+	border:1px solid #8192B6;
+	position:absolute;
+	left:0px;
+	top:5px;
+	color:black;
+	font-size:10pt;
+	FONT-WEIGHT:normal;
+	FONT-FAMILY:Arial;
+	FONT-VARIANT:normal;
+	background-color:white;
+	cursor:pointer}
+
+TABLE.dynaVHo div.iepm {
+	width:9px;
+	height:9px}
+
+TABLE.dynaVHo div.w3cpm {
+	width:7px;
+	height:7px}
+
+TABLE.dynaVHo div.pmb {
+	border:1px solid #8192B6;
+	position:absolute;
+	left:5px;
+	top:5px;
+	color:black;
+	font-size:10pt;
+	FONT-WEIGHT:normal;
+	FONT-FAMILY:Arial;
+	FONT-VARIANT:normal;
+	background-color:white;
+	cursor:pointer}
+
+TABLE.dynaVHo div.p {
+	FONT-WEIGHT:normal;
+	FONT-SIZE:12px;
+	LEFT:0px;
+	WIDTH:9px;
+	COLOR:black;
+	TEXT-INDENT:0px;
+	FONT-STYLE:normal;
+	FONT-FAMILY:Arial;
+	POSITION:absolute;
+	TOP:-4px;
+	HEIGHT:13px;
+	BACKGROUND-COLOR:#ffffff;
+	FONT-VARIANT:normal;
+	TEXT-DECORATION:none;
+	cursor:pointer}
+
+TABLE.dynaVHo div.m {
+	position:relative;
+	top:3px;
+	left:1px;
+	width:5px;
+	height:1px;
+	border-top:1px solid black;
+	cursor:pointer}
+    
+TABLE.dynaVHo div.kn {
+	BORDER-RIGHT:black 1px solid;
+	BORDER-TOP:black 1px solid;
+	MARGIN:0px 5px 0px 14px;
+	OVERFLOW:hidden;
+	BORDER-LEFT:black 1px solid;
+	WIDTH:9px;
+	BORDER-BOTTOM:black 1px solid;
+	HEIGHT:9px;
+	BACKGROUND-COLOR:#ffffa0;
+	VERTICAL-ALIGN:middle;
+	HORIZONTAL-ALIGN:left;
+	cursor:pointer}
+
+TABLE.dynaVHo div.kns {
+	BACKGROUND-COLOR:#000080;
+	COLOR:White}
+
+TABLE.dynaVHo div.knu {
+	BACKGROUND-COLOR:inherit;
+	COLOR:inherit}
+	
+TABLE.dynaVHo div.kc {
+	padding:0px;
+	position:absolute;
+	left:11px;
+	top:1px;
+	height:20px;
+	width:100%;
+	cursor:pointer}
+   
+TABLE.dynaVHo div.kc1 {
+    padding:0px;
+	border:1px solid black;
+	left:0px;
+	top:5px;
+	position:absolute;
+	BACKGROUND-COLOR:#ffff00;
+	cursor:pointer}
+
+TABLE.dynaVHo DIV {
+    position:absolute;
+    width:100%;
+	overflow:hidden}
+
+TABLE.dynaHHo {
+	MARGIN:0px;
+	OVERFLOW: hidden;
+	TEXT-INDENT:0px;
+	BORDER-left:0px;
+	BORDER-top:0px;
+	BORDER-bottom:0px;
+	BORDER-right:1px solid black;
+	HORIZONTAL-ALIGN:middle}
+
+TABLE.dynaHHo TBODY {
+	color:inherit;
+	FONT-FAMILY:inherit;
+	FONT-WEIGHT:inherit;
+	FONT-SIZE:inherit;
+	FONT-STYLE:inherit;
+	FONT-VARIANT:inherit}
+
+TABLE.dynaHHo TR {
+	color:inherit;
+	FONT-FAMILY:inherit;
+	FONT-WEIGHT:inherit;
+	FONT-SIZE:inherit;
+	FONT-STYLE: inherit;
+	FONT-VARIANT: inherit}
+
+TABLE.dynaHHo TD {
+	color:inherit;
+	FONT-FAMILY: inherit;
+	FONT-WEIGHT:inherit;
+	FONT-SIZE:inherit;
+	FONT-STYLE: inherit;
+	FONT-VARIANT: inherit;
+	VERTICAL-ALIGN:middle;
+	WORD-BREAK:break-all;
+	HORIZONTAL-ALIGN:middle}
+
+TABLE.dynaHHo IMG {
+	BORDER-RIGHT:0px;
+	BORDER-TOP:0px;
+	MARGIN:0px 6px 0px 4px;
+	BORDER-LEFT:0px;
+	BORDER-BOTTOM:0px;
+	VERTICAL-ALIGN:middle}
+
+TABLE.dynaHHo div.pmc {
+	position:absolute;
+	left:12px;
+	top:0px;
+	width:100%;
+	margin-left:3px;
+	margin-top:0px;
+	padding-top:1px;
+	color:#000000;
+	BACKGROUND-COLOR:transparent;
+	word-wrap: normal;
+	cursor:pointer}
+
+TABLE.dynaHHo div.iepm {
+	width:9px;
+	height:9px}
+
+TABLE.dynaHHo div.w3cpm {
+	width:7px;
+	height:7px}
+
+TABLE.dynaHHo div.pm {
+	border:1px solid #8192B6;
+	position:absolute;
+	left:0px;
+	top:5px;
+	color:black;
+	margin-left:3px;
+	margin-top:0px;
+	font-size:10pt;
+	FONT-WEIGHT:normal;
+	FONT-FAMILY:Arial;
+	FONT-VARIANT:normal;
+	background-color:white;
+	cursor:pointer}
+    
+TABLE.dynaHHo div.p 
+{
+	position:absolute;
+	FONT-WEIGHT:normal;
+	FONT-SIZE:12px;
+	LEFT:0px;
+	WIDTH:9px;
+	COLOR:black;
+	TEXT-INDENT:0px;
+	FONT-STYLE:normal;
+	FONT-FAMILY:Arial;
+	POSITION:absolute;
+	TOP:-4px;
+	HEIGHT:13px;
+	BACKGROUND-COLOR:#ffffff;
+	FONT-VARIANT:normal}
+
+TABLE.dynaHHo div.m 
+{
+	position:absolute;
+	top:3px;
+	left:1px;
+	width:5px;
+	height:1px;
+	border-top:1px solid black}
+
+TABLE.dynaHHo DIV {
+	position:absolute;
+	width:100%;
+	overflow:hidden}
+
+TABLE.dynaTable {
+}
+
+TABLE.dynaTable TBODY
+{
+	margin:0px;
+	color:inherit;
+	BACKGROUND-COLOR:  inherit;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	TEXT-INDENT: inherit;
+	FONT-STYLE:  inherit;
+	FONT-VARIANT:  inherit
+}
+
+TABLE.dynaTable TR
+{
+	padding-top:0pt;
+	padding-bottom:0pt;
+	color:inherit;
+	BACKGROUND-COLOR:  inherit;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	TEXT-INDENT: inherit;
+	FONT-VARIANT:  inherit;
+	FONT-STYLE:  inherit;
+	vertical-align:middle
+}
+TABLE.dynaTable TD
+{
+	padding-top:0pt;
+	padding-bottom:0pt;
+	padding-right:1pt;
+	border-bottom-width:1px;
+	border-right-width:1px;
+	border-left-width:0px;
+	border-top-width:0px;
+	border-style:solid;
+	border-color:inherit;
+	color:inherit;
+	BACKGROUND-COLOR:  inherit;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	TEXT-INDENT: inherit;
+	FONT-STYLE:  inherit;
+	FONT-VARIANT:  inherit;
+	vertical-align:middle;
+	overflow:hidden
+}
+TABLE.dynaTableNovertNohori TR
+{
+	vertical-align:middle
+}
+TABLE.dynaTableNovertNohori TD
+{
+	padding-top:0pt;
+	padding-bottom:0pt;
+	border-bottom-width:0px;
+	border-right-width:0px;
+	border-left-width:0px;
+	border-top-width:0px;
+	border-style:solid;
+	border-color:inherit;
+	color:inherit;
+	BACKGROUND-COLOR:  inherit;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	TEXT-INDENT: inherit;
+	FONT-STYLE:  inherit;
+	FONT-VARIANT:  inherit;
+	vertical-align:middle;
+	overflow:hidden
+}
+
+TABLE.dynaTableNovert TR
+{
+	vertical-align:middle
+}
+TABLE.dynaTableNovert TD
+{
+	padding-top:0pt;
+	padding-bottom:0pt;
+	padding-right:1pt;
+	border-bottom-width:1px;
+	border-right-width:0px;
+	border-left-width:0px;
+	border-top-width:0px;
+	border-style:solid;
+	border-color:inherit;
+	color:inherit;
+	BACKGROUND-COLOR:  inherit;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	TEXT-INDENT: inherit;
+	FONT-STYLE:  inherit;
+	FONT-VARIANT:  inherit;
+	vertical-align:middle;
+	overflow:hidden
+}
+
+TABLE.dynaTableNohori TR
+{
+	vertical-align:middle
+}
+TABLE.dynaTableNohori TD
+{
+	padding-top:0pt;
+	padding-bottom:0pt;
+	padding-right:1pt;
+	border-bottom-width:0px;
+	border-right-width:1px;
+	border-left-width:0px;
+	border-top-width:0px;
+	border-style:solid;
+	border-color:inherit;
+	color:inherit;
+	BACKGROUND-COLOR:  inherit;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	TEXT-INDENT: inherit;
+	FONT-STYLE:  inherit;
+	FONT-VARIANT:  inherit;
+	vertical-align:middle;
+	overflow:hidden
+}
+
+TABLE.dynaCheckbox
+{
+	border-style:none
+}
+
+TABLE.dynaCheckbox TR
+{
+	padding-top:0pt;
+	padding-bottom:0pt;
+	vertical-align:middle
+}
+
+TABLE.dynaCheckbox TD
+{
+	margin-top:0pt;
+	margin-bottom:0pt;
+	padding-top:0pt;
+	padding-bottom:0pt;
+	padding-right:1pt;
+	border-bottom-width:1px;
+	border-right-width:1px;
+	border-left-width:0px;
+	border-top-width:0px;
+	border-style:solid;
+	vertical-align:middle;
+	overflow:hidden
+}
+
+TEXTAREA.dynaText
+{
+	overflow:hidden;
+	color:inherit;
+	border-style:none;
+	background-color:transparent;
+	FONT-FAMILY:  inherit;
+	FONT-WEIGHT: inherit;
+	FONT-SIZE: inherit;
+	FONT-STYLE:  inherit;
+	FONT-VARIANT:  inherit;
+	TEXT-INDENT: inherit
+}
+
+P {
+	cursor:inherit
+}
+
+TABLE.dynaMenu
+{
+	border-collapse:collapse;
+	LEFT: 0px;
+	POSITION: absolute;
+	TOP: 0px;
+	visibility:hidden;
+	BACKGROUND-COLOR:white;
+	color:Black;
+	border:2px outset lightgray;
+	font-family:arial;
+	font-size:10pt;
+	cursor:pointer
+}
+
+TABLE.dynaMenu TD
+{
+	padding-top:2pt;
+	padding-bottom:2pt;
+	padding-left:5pt;
+	padding-right:5pt
+}
+
+TD.dynaMenuI
+{
+	color:white;
+	BACKGROUND-COLOR:#3399FF
+}
+OPTION
+{
+	overflow:visible;
+	margin:0px;
+	padding:0px;
+	vertical-align:middle
+}
+SELECT.dynaMenu 
+{
+	margin:0px;
+	padding:0px;
+	overflow: hidden;
+	border-top-style: none;
+	border-right-style: none; 
+	border-bottom-style: none; 
+	border-left-style: none;
+	text-align: left;
+	background-color: transparent;
+	vertical-align:middle
+}
+SELECT.dynaMenu:not(:disabled)
+{
+	cursor:pointer
+}
+BUTTON
+{
+	cursor:default;
+	padding:0px
+}
+TABLE.dynaButton {
+	margin:0px;
+	padding:0px;
+	border-collapse: collapse;
+	border:none;
+}
+TR.dynaButton {
+	border:none;
+	margin:0px;
+	padding:0px;
+	vertical-align:middle
+}
+TD.dynaButton {
+	border:none;
+	margin:0px;
+	padding:0px;
+	vertical-align:middle;
+	background-color: transparent}
+.wait, .wait * {
+	cursor: wait !important;}

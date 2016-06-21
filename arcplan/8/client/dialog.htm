@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<SCRIPT>
+
+var username="";
+var password="";
+var client="";
+var language="";
+var domain="";
+var cancel=true;
+var myTA0;
+var myTA1;
+var myTA2;
+var myTA3;
+var myTA4;
+var myTA8;
+var myTA9;
+var myTA10;
+var myTA11;
+var myTA12;
+var myTA20;
+var myTA21;
+
+var myTA30;
+
+var ParentHwnd=null;
+
+function dynasetSAPValues() {
+	var list=window.document.getElementsByTagName("SELECT");
+
+	if (!list) return;
+	var myVals = new Array;
+	var myOpt;
+	for (i=0; i<list.length; i++) {
+		myVals[i]="";
+		myOpt=list[i].options;
+		if (!myOpt) break;
+		for (j=0; j<myOpt.length; j++) {
+			if (myOpt[j].selected) {
+				myVals[i]=myOpt[j].value;
+				break;
+			}
+		}
+	}
+	
+	
+	for (i=0; i<myVals.length; i++) {
+		ParentHwnd.dynaDialogValue.length=myVals.length;
+		if (ParentHwnd) ParentHwnd.dynaDialogValue[i]=myVals[i];
+	}
+}
+
+function dynaUserLoginCancel() {
+	if (ParentHwnd) {
+		ParentHwnd.dynaUserLoginCancel();
+	}
+}
+
+function dynainitdialog() {
+	var browser;
+	if (window.opener) {
+		browser = window.opener.m_PlatForm.browser;
+	}
+	else { //kein window.opener im I.E bei showmodaldialog
+		browser = "ie";
+	}
+	if (browser != "ie") {
+		ParentHwnd=window.opener
+		window.dialogHeight=window.innerHeight;
+	}
+	else {
+		window.returnValue=true;
+		ParentHwnd = window.dialogArguments[0];
+		if (ParentHwnd) {
+			ParentHwnd.dynaDialogHwnd = window;
+		}
+	}
+	if (ParentHwnd) ParentHwnd.dynainitdialog(window);
+}
+function dynaUserLogin(username,password,password1,client,language,domain,cancel,storecred) {
+	if (ParentHwnd) ParentHwnd.dynaUserLogin(username, password, password1, client, language, domain, cancel, storecred);
+}
+function Reply(Type,Var) {
+	if (ParentHwnd)	ParentHwnd.Reply(Type,Var);
+}
+function dynaShowCPWdialog(param) {
+	if (ParentHwnd)	ParentHwnd.dynaShowCPWdialog(param);
+}
+</SCRIPT>
+<STYLE>
+DIV { FONT-SIZE:11pt; }
+</STYLE>
+
+</HEAD>
+<BODY onload="dynainitdialog();" onUnload="dynaUserLoginCancel()">
+</BODY>
+</HTML>

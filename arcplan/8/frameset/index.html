@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <title>arcplan Solution</title>
+    <link type="text/css" rel="stylesheet" href="css/frameset.css" />
+    <link type="text/css" rel="stylesheet" href="css/toolbar.css" />
+    <script type="text/javascript" src="js/frameset.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        var UsrParam = location.href;
+        function getParam() {
+            return UsrParam;
+        }  
+
+        function notifyWaitingState(isWaiting) {
+            var navIframe = document.getElementById("navIFrame");
+            if (navIframe && navIframe.contentWindow && navIframe.contentWindow.notifyWaitingState
+                && (typeof navIframe.contentWindow.notifyWaitingState === "function")) 
+            {
+                navIframe.contentWindow.notifyWaitingState(isWaiting);
+            }
+        }
+
+        function arcplanInitSSO(query) {
+            var ssoIframe = document.getElementById("arcplanSSOFrame");
+            if (ssoIframe != null) {
+                ssoIframe.src = query;
+            }
+        }
+
+        function arcplanInitSSOFinish() {
+            var arcplanClient = document.getElementById("arcClient");
+            if (arcplanClient != null) {
+                arcplanClient.acInitSSOFinish();
+            }
+        }
+    </script>
+</head>
+<body onresize="resizeAll()" style="margin: 0px; overflow: hidden" scroll="no">
+    <!-- Header Background-->
+    <div style="width: 100%; height: 50px; background-image: url('img/header/background1px.jpg');
+        background-repeat: repeat-x">
+    </div>
+    <!-- Header-->
+    <table id="header" cellpadding="0" cellspacing="0" width="100%" style="position: absolute;
+        top: 0px; height: 50px; background-image: url('img/header/background.jpg'); background-repeat: no-repeat;">
+        <tr>
+            <!-- Logo -->
+            <td style="min-width: 160px;">
+                <div style="width:160px;"><a href="http://www.arcplan.com">&nbsp;</a></div>
+            </td>
+            <!-- Title -->
+            <td style="min-width: 260px;">
+                <div style="width:260px;">&nbsp;</div>
+            </td>
+            <td align="right" style="width:100%;vertical-align: bottom">
+                <div id="toolbar" class="toolbar" style="width:400px;"></div>
+            </td>
+            <td style="width: 100px">                                   
+             <div style="width:100px;">
+                 <a href='javascript:top.logOut()'><font style="color: White; font-size: smaller;">Log out &amp; Reload</font></a>
+                  <!-- ShortCut -->
+                  <div id="shortcut" style="padding-top: 5px">
+                      <input id="shortcutText" name="Text1" type="text" value="Enter Shortcut" 
+                          size="12"
+                          onfocus="if(this.value=='Enter Shortcut'){this.value='';}"
+                          onblur="if(this.value==''){this.value='Enter Shortcut'}" 
+                          onKeyPress="handleShortcutKeyPress(event, this.value)"
+                      />
+                      <a href="#" onclick="enterToolbarText(document.getElementById('shortcutText').value)"><img alt="Submit Shortcut" src="img/header/searchArrows.gif" id="submit"></a>
+                 </div>                
+              </div>
+            </td>
+        </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <!-- SliderBar -->
+            <td valign="top" id="sliderBar">
+                <a id="navButton" class="button" href="javascript:toggleSliderBar()">
+                    <img alt="Navigation" src="img/menu/navigation.gif" /><span id="navText">Navigation</span></a>
+                <div id="navArea">
+                    <iframe id="navIFrame" class="sliderFrame" src="navigation.html"></iframe>
+                </div>
+            </td>
+            <!-- Separator -->
+            <td id="separator">
+                <a href="javascript:toggleSliderBar()">
+                    <img id="separatorimg" src="img/slider/closeSliderBar.png" alt="arcplan" /></a>
+            </td>
+            <td style="vertical-align: top">
+                <!-- dropDownMenu -->
+                <div id="dropdownmenu" class="dropdownmenu" style="width: 100%; height: 22px; background-color: #43BDF0">
+                </div>
+                <!-- arcplan Client -->
+                <div id="appletScroller" style="overflow: auto; background-color: white">
+                    <iframe id="arcplanSSOFrame" style="height:0;width:100%;margin:0;padding:0;display:none"></iframe>
+                    <applet id="arcClient" archive="http://localhost/arcplan/8/client/arcClient8Java.jar"
+                        codebase="http://localhost/arcplan/8/client" code="arcClientJava.class"
+                        height="99%" width="100%">
+                        <param name="AppletPrint" value="4" />
+                        <param name="LanguageIdentifier" value="0" />
+                        <param name="DocumentFrame" value="disable" />
+                        <param name="document" value="arcplan Edge\\application.apa" />
+                        <param name="script" value="disable" />
+                        <param name="MouseMoveEvent" value="disable" />
+                        <param name="TitleBar" value="disable" />
+                        <param name="SoapCom" value="false" />
+                        <param name="OneClickSubmission" value="enable" />
+                        <param name="onWaitingStateChanged" value="notifyWaitingState" />
+                        <param name="cgiSite" value="http://localhost/arcplan/8/scripts/arcCGI8.exe" />
+                        <param name="JavascriptSSO" value="disable" />
+                    </applet>
+                </div>
+                <!-- Alternative container for other html content, triggered by the tabs -->
+                <div id="tabContainer">
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+<!--call initialization routines before page is opened-->
+<script type="text/javascript">
+    pageinit();
+</script>
+</html>

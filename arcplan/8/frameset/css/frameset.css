@@ -1,0 +1,188 @@
+﻿/*General*/
+* { 
+	font: normal small arial, verdana;
+	text-decoration:none; 
+	color:#303030;
+}
+
+img {border:0;}
+
+.appInfo {
+	font: bold x-large arial, verdana;
+	color:white;
+	padding-bottom:2px;
+}
+
+/*Don't wrap content of table cells to keep height of tables*/
+td {white-space: nowrap;}
+
+/*Buttons for Menus and Sliders*/
+.button 
+{
+	display:block;
+	cursor:pointer;
+	border-style:solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #E0E0E0;
+	background-image:url('../img/menu/bg.png');
+	background-repeat:repeat-x;
+}
+
+.button:hover 
+{
+	background-image:url('../img/menu/bghover.png');
+}
+
+/*Sliders*/
+
+#sliderBar 
+{
+	 background-color:#F0F0F0;
+}
+
+#sliderBar .button {
+	height:21px;
+	width:190px;
+}
+
+#sliderBar .button img 
+{ /*alignement of button image*/
+	padding-top:2px;
+	padding-left:3px;
+}
+
+#sliderBar .button span 
+{ /*alignement of button text*/
+	vertical-align:2px;
+	padding-left:7px;
+}
+
+
+#sliderBar iframe {
+	display:none;
+	border:0px;
+	padding:0px;
+	width:190px;
+}
+
+#separator {
+	background-image:url('../img/separatorvert.png');
+	background-repeat:repeat-y;
+	vertical-align:top;
+}
+
+#separator a {
+	vertical-align:top;
+}
+
+/*Dropdown Menu*/
+
+/*Menu item Styles*/
+.dropdownmenu 
+{
+	background-image:url('../img/menu/bg.png');
+}
+
+.dropdownmenu .button {
+	list-style: none;
+	float: left;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+
+.dropdownmenu h2 
+{
+	margin:0px 15px;
+	padding:2px 0px;
+}
+
+.dropdownmenu .small
+{
+	margin:0px 5px;
+}
+
+/*Popup window styles*/
+.dropdownmenu ul ul
+{ /*important to position the popup window approriately*/
+	padding:0px;
+	margin:0px;
+}
+
+.dropdownmenu iframe {
+	position: absolute;
+	width: 167px;
+	z-index:100;
+	padding:3px 1px;
+	border:none;
+}
+
+.dropdownmenu ul ul a {
+	display: block;
+	color: #2F4871;
+	width: 154px;
+	padding:0 8px;
+	text-align:left;
+}
+
+.drillentry {
+	background-image:url('../img/menu/drilldown.gif');
+	background-position:right;
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+}
+
+.dropdownmenu ul ul {
+	position: absolute;
+	z-index: 105;
+	width:170px;
+}
+ 
+.dropdownmenu li li {
+	height:19px;
+	white-space: nowrap;
+	position: relative;
+	z-index: 110;
+	background-color:#F0F6FD;
+	list-style: none
+}
+
+.dropdownmenu ul ul li:hover {
+	background-color:#D3E3F7;
+}
+
+.dropdownmenu ul ul a:hover {
+	background-image:url('../img/menu/itemselect.png');
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+}
+ 
+/*place 2nd submenu right to the upper right corner of the parent li*/
+.dropdownmenu ul ul ul {
+	position: absolute;
+	top: 0;
+	left: 100%;
+}
+
+/*hide unhovered submenues*/
+.dropdownmenu ul ul,
+.dropdownmenu ul li:hover ul ul,
+.dropdownmenu ul ul li:hover ul ul
+{
+	display: none;
+}
+ 
+/*display hovered submenus*/
+.dropdownmenu ul li:hover ul,
+.dropdownmenu ul ul li:hover ul,
+.dropdownmenu ul ul ul li:hover ul
+{
+	display: block;
+}
+  
+#shortcutText 
+{
+    height: 13px;
+    color: #808080;
+    font-size: x-small;
+}

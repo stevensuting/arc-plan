@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Portal</title>
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" href="/arcplan/8/client/css/arcclient.css"/>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<body>
+	<script type="text/javascript">
+		function updateChart()
+		{
+			var varInputParameter1 = document.forms["Form1"]["InputYear"].value + "/" + document.forms["Form1"]["InputMonth"].value + "/" + document.forms["Form1"]["InputDate"].value;
+
+			window.frames['iframe1'].updateChart(varInputParameter1);
+			window.frames['iframe2'].updateChart(varInputParameter1);
+			window.frames['iframe3'].updateChart(varInputParameter1);
+			window.frames['iframe4'].updateChart(varInputParameter1);
+			window.frames['iframe5'].updateChart(varInputParameter1);
+			window.frames['iframe6'].updateChart(varInputParameter1);
+			window.frames['iframe7'].updateChart(varInputParameter1);
+			window.frames['iframe8'].updateChart(varInputParameter1);
+			window.frames['iframe9'].updateChart(varInputParameter1);
+			window.frames['iframe10'].updateChart(varInputParameter1);
+			window.frames['iframe11'].updateChart(varInputParameter1);
+			window.frames['iframe12'].updateChart(varInputParameter1);
+		}
+	</script>
+
+	<!-- ALGATTAS PART -->
+	This form is not created in arcplan. But the charts are from arcplan, via iframe.
+	<form id="Form1" action="form_action.asp">
+		Year: <input type="text" name="InputYear"><br>
+		Month: <input type="text" name="InputMonth"><br>
+		Date: <input type="text" name="InputDate"><br><br>
+		<input type="button" onclick="updateChart()" value="Submit">
+	</form>
+
+	<!-- ARCPLAN PART -->
+	<div id="arcContainer1" class="arcContainer" style="visibility:visible; position:absolute; left:50px; top:150px; z-index:2">
+	<iframe src="MINI_UserMonthly.html" name="iframe1" id="iframe1" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer2" class="arcContainer" style="visibility:visible; position:absolute; left:400px; top:150px; z-index:3">
+	<iframe src="MINI_UserMonthlyGender.html" name="iframe2" id="iframe2" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer3" class="arcContainer" style="visibility:visible; position:absolute; left:750px; top:150px; z-index:4">
+	<iframe src="MINI_UserMonthlyAgeGroup.html" name="iframe3" id="iframe3" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer4" class="arcContainer" style="visibility:visible; position:absolute; left:1100px; top:150px; z-index:5">
+	<iframe src="MINI_AgeUserClickDate.html" name="iframe4" id="iframe4" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer5" class="arcContainer" style="visibility:visible; position:absolute; left:50px; top:350px; z-index:6">
+	<iframe src="WIDGET_UserMonthly.html" name="iframe5" id="iframe5" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer6" class="arcContainer" style="visibility:visible; position:absolute; left:50px; top:700px; z-index:7">
+	<iframe src="WIDGET_UserMonthlyAge.html" name="iframe6" id="iframe6" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer7" class="arcContainer" style="visibility:visible; position:absolute; left:50px; top:1050px; z-index:8">
+	<iframe src="WIDGET_UserMonthlyAgeGroup.html" name="iframe7" id="iframe7" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer8" class="arcContainer" style="visibility:visible; position:absolute; left:700px; top:1400px; z-index:9">
+	<iframe src="WIDGET_UserMonthlyGender.html" name="iframe8" id="iframe8" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer9" class="arcContainer" style="visibility:visible; position:absolute; left:700px; top:350px; z-index:10">
+	<iframe src="WIDGET_UserDaily.html" name="iframe9" id="iframe9" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer10" class="arcContainer" style="visibility:visible; position:absolute; left:700px; top:700px; z-index:11">
+	<iframe src="WIDGET_UserDailyAge.html" name="iframe10" id="iframe10" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer11" class="arcContainer" style="visibility:visible; position:absolute; left:700px; top:1050px; z-index:12">
+	<iframe src="WIDGET_UserDailyAgeGroup.html" name="iframe11" id="iframe11" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+	<div id="arcContainer12" class="arcContainer" style="visibility:visible; position:absolute; left:50px; top:1400px; z-index:13">
+	<iframe src="WIDGET_UserDailyGender.html" name="iframe12" id="iframe12" width="600" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
+	</div>
+
+
+	<!-- SCRIPT FOR AUTO REFRESH / TIMER -->
+	<script type="text/javascript">
+	function wArcSendClick(varInterval, varDocument, varObjID, varRow, varInt)
+	{
+		wVarArcSendClick = setInterval(function() { wArcSendClickEvent(varDocument, varObjID, varRow, varInt); }, varInterval);
+	}
+
+	function wArcStopClick()
+	{
+		clearInterval(wVarArcSendClick);
+	}
+
+	function wArcSendClickEvent(varDocument, varObjID, varRow, varInt)
+	{
+		try
+		{
+			<!-- 4 is the arcplan document object that is executed by STARTJS() -->
+			<!-- Parameters: String document, int ObjID, int row, int column -->
+			ARCPLAN.arcclient.acSendClickEvent(varDocument, varObjID, varRow, varInt);
+		}
+		catch(ex)
+		{
+			alert(ex.description);
+		}
+	}
+	</script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿/*Formatting*/
+
+ .smallbutton {	
+	background-image:url('../img/menu/buttonsmall.png');
+	height:22px;
+	width:23px;
+	text-align:center;
+}
+
+ .smallbutton:hover {	
+	background-image:url('../img/menu/buttonsmallhover.png');
+}
+
+.dropdownmenu ul {
+	list-style: none;
+	float: left;
+	padding:0px;
+	margin:0px;
+	width: 131px;
+}
+
+.dropdownmenu h2 {
+	font: 12px/17px arial, helvetica, sans-serif;
+	background-image:url('../img/menu/button.png');
+	text-align:center;
+	color: #2F4871;
+	margin:0;
+	padding:2px 0px;
+	cursor:pointer;
+	/*height:20px; not allowed here for IE*/
+}
+
+.dropdownmenu h2:hover {
+	background-image:url('../img/menu/buttonhover.png');
+}
+ 
+.dropdownmenu ul ul a {
+	display: block;
+	font: 12px/17px arial, helvetica, sans-serif;
+	color: #2F4871;
+	width: 154px;
+	padding:0 8px;
+}
+
+.dropdownmenu ul ul a:hover {
+	background-image:url('../img/menu/itemselect.png');
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+}
+ 
+.drillentry {
+	background-image:url('../img/menu/drilldown.gif');
+	background-position:right;
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+}
+
+.dropdownmenu ul ul {
+	position: absolute;
+	z-index: 105;
+	width:170px;
+}
+ 
+/*li of submenus*/
+.dropdownmenu ul ul li {
+	white-space: nowrap;
+	position: relative;
+	z-index: 110;
+	background-color:#F0F6FD;
+}
+
+.dropdownmenu ul ul li:hover {
+	background-color:#D3E3F7;
+}
+
+
+/*place 2nd submenu right to the upper right corner of the parent li*/
+.dropdownmenu ul ul ul {
+	position: absolute;
+	top: 0;
+	left: 100%;
+}
+
+/*hide unhovered submenues*/
+.dropdownmenu ul ul,
+.dropdownmenu ul li:hover ul ul,
+.dropdownmenu ul ul li:hover ul ul
+{
+	display: none;
+}
+ 
+/*display hovered submenus*/
+.dropdownmenu ul li:hover ul,
+.dropdownmenu ul ul li:hover ul,
+.dropdownmenu ul ul ul li:hover ul
+{
+	display: block;
+}
+  
+.dropdownmenu iframe {
+	position: absolute;
+	width: 167px;
+	z-index:100;
+	padding:3px 1px;
+	border:none;
+}

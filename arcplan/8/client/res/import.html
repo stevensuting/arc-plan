@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title>IMPORT</title>
+	<link type="text/css" rel="stylesheet" href="../css/arcclient.css" />
+	<script type="text/javascript" src="../js/require.js"></script>
+</head>
+<body style="margin:0;">
+	<div class="arcMsgBox simplemodal-data" id="simplemodal-data" style="">
+		<div class="arcMsgBox-banner">
+			<div class="arcMsgBox-centerContent">
+				<form method="POST" class="arcImportForm" enctype="multipart/form-data" id="importForm" action="../../scripts/arcCGI8.exe">
+				<div class="arcMsgBox-contentPanel">
+					<div class="arcMsgBox-caption" id="importCaption">Upload File</div>
+					<div class="arcMsgBox-content arcImportContent">
+						<div class="arcImportFileParentContainer">
+							<span id="importText">Please select file to upload: </span>
+							<div class="arcImportFileContainer">
+								<input type="button" class="arcMsgBox-button arcMsgBox-buttonHeight" id="importFileSelect" value="Browse..." />
+								<input type="file" name="importFile" id="importFile" class="arcImportInput arcMsgBox-buttonHeight"/>
+							</div>
+						</div>		
+						</br>
+						<div id="importFileName" class="arcImportFileName"></div>
+						<div id="uploadInProgress" class="arcImportFileName" style="display:none"></div>
+						
+						<input type="hidden" name="soapMessage" id="soapMessage" value="" />
+					</div>
+				</div>
+				<div class="arcMsgBox-buttonLine">
+					<button name="importBtnOk" id="importBtnOk" class="arcMsgBox-button arcToolbarMargin arcMsgBox-buttonHeight">Ok</button>
+					<button name="importBtnCancel" id="importBtnCancel" class="arcMsgBox-button arcToolbarMargin arcMsgBox-buttonHeight">Cancel</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			"use strict";
+			var fileCtrl = document.getElementById("importFile"),
+				fileBtn = document.getElementById("importFileSelect"),
+				fileName = document.getElementById("importFileName");
+
+			fileBtn.onclick = function (ev) {
+				var e = ev || window.event;
+				fileCtrl.click();
+				e.cancelBubble = true;
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				}
+				return false;
+			};
+
+			fileCtrl.onchange = function (ev) {
+				var e = ev || window.event,
+					name = this.value.replace(/^.*[\\\/]/, '');
+
+				fileName.textContent = name;
+				fileName.title = name;
+				e.cancelBubble = true;
+				if (e.stopPropagation) {
+					e.stopPropagation();
+				}
+				return false;
+			};
+		} ());
+	</script>
+</body>
+</html>
